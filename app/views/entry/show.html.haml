@@ -1,0 +1,25 @@
+.allcontents
+  - if user_signed_in? && current_user.id == @entry.user_id
+    =@entry.image
+    %button#modal-open-btn.deletebtn 削除する 
+    = link_to "", entry_path(@entry.id), method: :DELETE, id: 'delete-btn'
+    #overlay
+      #modalWindow
+        .modal-message-box
+          %div 確認
+          %div 本当に削除しますか？
+        %button#modal-close-btn キャンセル
+        %button#delete-comformation-btn 削除する
+    .edit
+      = link_to "編集する",edit_entry_path(@entry.id)
+  .main-show
+    .entry-show
+      .entry-show__detail
+        .entry-show__detail__title
+          =@entry.title
+        .entry-show__detail__name
+          =@entry.user.name
+        .entry-show__detail__entryCategory
+          カテゴリ
+      .entryText
+        = simple_format @entry.text

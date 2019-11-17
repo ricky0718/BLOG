@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+ @import "font-awesome";
+ @import "font-awesome-sprockets";
+ @import 'font_awesome5_webfont';
+ @import 'font_awesome5.css';
+ @import "./reset";
+ @import "./entry.index";
+ @import "./entry.new";
+ @import "./entry.show";
+ @import "./user";
+ @import "./modal";
+ @import "./edit-new"

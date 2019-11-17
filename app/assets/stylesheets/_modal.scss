@@ -1,0 +1,82 @@
+.deletebtn{
+  font-size: 20px;
+  position: relative;
+  position: absolute;
+  right: 30px;
+  top:-70px;
+  color: white;
+  background-color: orange;
+  border-radius: 10px 10px 10px 10px;
+  cursor: pointer;
+
+}
+
+#overlay {
+  //モーダルウィンドウの背景を設定
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+  //透過度をつける
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1;
+  }
+  
+  #modalWindow {
+  // モーダルウィンドウの画面を設定(高さ・幅は調整ください)
+    width: 500px;
+    height: 200px;
+    position: absolute;
+  //トップからの場所を指定（topをいじれば高さが調整できます）
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 2;
+  //flexboxで子要素のボタンとメッセージボックスの要素を配置する
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 10px 10px 10px 10px;
+
+  
+    .modal-message-box {
+      width: 100%;
+  //下記heightの60pxはボタンの高さで、それを画面の大きさから引いています。
+      height: calc(100% - 60px);
+      text-align: center;
+  //flexboxで文字の配置を決める（縦方向、中央揃え）
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      border-radius: 10px 10px 10px 10px;
+
+    }
+  
+    #modal-close-btn {
+      width: 50%;
+      height: 60px;
+      border-radius: 10px 0px 0px 10px;
+      background-color: #EEEEEE;
+      cursor: pointer;
+    }
+  
+    #delete-comformation-btn {
+      width: 50%;
+      height: 60px;
+      border-radius: 0px 10px 10px 0px;
+      background-color: #EEEEEE;
+      cursor: pointer;
+    }
+  }
+  
+  .item-delete-btn {
+  //削除ボタンの非表示
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }

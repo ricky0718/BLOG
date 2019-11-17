@@ -1,0 +1,15 @@
+.all
+  .main
+    .main__entry
+      =form_for @entry do |f|
+        .main__entry__name
+          ブログの編集
+        = f.text_field :title, placeholder: 'タイトル',class:"main__entry__title"
+        .main__entry__category
+          カテゴリ
+        .main__entry__image
+        = f.label :image, class: "main__entry__image__icon" do
+          = fa_icon "image",class: 'icon'
+          = f.file_field :image, class: "main-form__image--default"
+        =f.text_area :text, placeholder:'ブログ本文',class:"main__entry__message"
+        =f.submit 'ブログを投稿する',class: 'send'

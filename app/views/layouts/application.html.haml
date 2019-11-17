@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title BLOG
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .all
+      .header
+        .header__detail
+          .header__detail__icon
+            %i.fas.fa-paw.fa-4x
+          .header__detail--name
+            = link_to"Բլոգի գյուղ",entry_index_path,class:"name"
+  = yield
