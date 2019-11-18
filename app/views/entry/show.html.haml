@@ -23,3 +23,6 @@
           カテゴリ
       .entryText
         = simple_format @entry.text
+    .item-button-container
+      .item-button-container__left
+        = render partial: 'likes/like', locals: { entry: @entry, entries: @entries, likes: @likes, like: @like}

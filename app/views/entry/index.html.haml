@@ -46,4 +46,4 @@
                   ラグビー
           .maincontents__box__entry__img
             = link_to entry_path(entry.id) do
-              =entry.image
+              =entry.image.url.to_s
