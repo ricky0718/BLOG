@@ -1,8 +1,15 @@
 
 .header__rogin
   - if user_signed_in?
-    .header__rogin--signin
-      = link_to "ログアウト" , destroy_user_session_path, method: :delete
+    %button#modal-open-btn.deletebtn-logout ログアウト 
+    = link_to "" , destroy_user_session_path, method: :delete,id: 'delete-btn'
+    #overlay
+      #modalWindow
+        .modal-message-box
+          %div 確認
+          %div 本当にログアウトしますか？
+        %button#modal-close-btn キャンセル
+        %button#delete-comformation-btn ログアウト
     .header__rogin--signup
       = link_to "ブログをはじめる", new_entry_path, class:"sign"
     .header__rogin--name
@@ -19,7 +26,7 @@
   .side-bar
     .side-bar__contents
       .sidebar__contents--tags
-        ラグビー
+        カテゴリ
   .maincontents
     .maincontents__header
       .maincontents__header__contents
