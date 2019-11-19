@@ -1,11 +1,23 @@
 .allcontents{
-  height: 100%;
+  //height: 900px;
   width: 100%;
-  background-image:url("https://www.instagram.com/p/BlJv7aWhRwU/media/?size=l");
+  //background-image:url("https://www.instagram.com/p/BlJv7aWhRwU/media/?size=l");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
   position: relative;
+
+  .bgc-image{
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 auto;
+    width: 100%;
+    //background-size: cover;
+    //background-attachment: fixed;
+    //background-position: center;
+    opacity: 0.5;
+
+  }
 
   .edit{
     position: absolute;
@@ -21,14 +33,14 @@
     
   }
   .main-show{
-    height: calc(100vh - 100px);
+    //height: calc(100vh - 100px);
     overflow: scroll;
     .entry-show{
       position: relative;
       position: absolute;
       top: 50px;
       left: 300px;
-      height: 520px;
+      height: 700px;
       width: 800px;
       background-color:white;
       opacity: 0.9;
@@ -65,13 +77,14 @@
       }
 
       .entryText{
-        height: 350px;
+        height: 530px;
         width: 700px;
         background-color: white;
         filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.6));
         line-height: 50px;
         margin-left: 50px;
         margin-top: 5px;
+        overflow: scroll;
       }
     }
   }

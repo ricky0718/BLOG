@@ -50,7 +50,7 @@
                 .maincontents__box__entry__category__center__name
                   カテゴリ：
                 .maincontents__box__entry__category__center__type
-                  ラグビー
+                  筋肉
           .maincontents__box__entry__img
             = link_to entry_path(entry.id) do
-              =entry.image
+              =image_tag entry.image.url.to_s,class:"image"

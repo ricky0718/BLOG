@@ -1,6 +1,7 @@
+
 .allcontents
+  =image_tag @entry.image.url.to_s,class:"bgc-image"
   - if user_signed_in? && current_user.id == @entry.user_id
-    =@entry.image
     %button#modal-open-btn.deletebtn 削除する 
     = link_to "", entry_path(@entry.id), method: :DELETE, id: 'delete-btn'
     #overlay
@@ -23,3 +24,4 @@
           カテゴリ
       .entryText
         = simple_format @entry.text
+  
