@@ -1,6 +1,7 @@
 class EntryController < ApplicationController
   def index
     @entries = Entry.includes(:user)
+    @entries = Entry.all.order("created_at DESC")
   end
   def new
     @entry = Entry.new
