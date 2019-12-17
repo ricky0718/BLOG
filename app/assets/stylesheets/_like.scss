@@ -1,0 +1,53 @@
+.like{
+  position: relative;
+  #iine{
+    position: absolute;
+    left: 300px;
+    top: 10px;
+    cursor: pointer;
+    width: 250px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    height: 40px;
+  }
+  .icon{
+    
+    .fa.fa-fist-raised{
+      color: red;
+      position: absolute;
+      left: 455px;
+      top: 13px;
+    }
+  }
+  #uniine{
+    cursor: pointer;
+    position: absolute;
+    left: 300px;
+    top: 10px;
+    width: 250px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    height: 40px;
+  }
+  .else_icon{
+    .fa.fa-fist-raised{
+      color:rgb(41, 37, 37) ;
+      position: absolute;
+      left: 455px;
+      top: 13px;
+    }
+  }
+  .count{
+    position: absolute;
+    left: 520px;
+    top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+
+
+  }
+
+}
