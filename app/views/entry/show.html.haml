@@ -24,4 +24,7 @@
           カテゴリ
       .entryText
         = simple_format @entry.text
+      .iine{"data-entry-id" => "#{@entry.id}", :id => "entry-#{@entry.id}"}
+        = render "likes/like", entry: @entry
+
   

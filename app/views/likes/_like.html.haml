@@ -1,0 +1,18 @@
+- if user_signed_in?
+  .like
+    - if entry.iine?(current_user)
+      = form_for(entry.likes.find_by(user_id: current_user.id), method: :delete, remote: true) do |f|
+        %button#iine NICE MUSCLE          
+        .icon
+          %i.fa.fa-fist-raised.fa-2x
+        .count
+          #{entry.likes_count}
+    - else
+      = form_for(entry.likes.build, remote: true) do |f|
+        = hidden_field_tag :entry_id, entry.id
+        %button#uniine NICE  MUSCLE         
+        .else_icon
+          %i.fa.fa-fist-raised.fa-2x
+        .count
+          #{entry.likes_count}
+        -# = content_tag :span, "#{entry.likes_count}", class: "glyphicon glyphicon-heart-empty"
