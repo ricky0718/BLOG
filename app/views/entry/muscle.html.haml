@@ -1,0 +1,24 @@
+.muscle_ranking
+  - @all_ranks.each.with_index(1) do |entry, i| 
+    .maincontents__box__entry
+      = link_to entry_path(entry.id) do
+        .maincontents__box__entry__ranking
+          .maincontents__box__entry__ranking
+            第
+          .maincontents__box__entry__ranking
+            = i
+          .maincontents__box__entry__ranking
+            位
+        .maincontents__box__entry__title
+          .maincontents__box__entry__title__name
+            = entry.title
+          .maincontents__box__entry__title__user
+            =entry.user.name
+        .maincontents__box__entry__category
+          .maincontents__box__entry__category__center
+            .maincontents__box__entry__category__center__name
+              カテゴリ：
+            .maincontents__box__entry__category__center__type
+              筋肉
+        .maincontents__box__entry__img
+          =image_tag entry.image.url.to_s,class:"image"
