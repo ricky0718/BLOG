@@ -93,6 +93,30 @@
     }
   }
 }
+.muscle_detail{
+  display: flex;
+  position: relative;
+  position: absolute;
+  top: 20px;
+  left: 500px;
+  .muscle_detail__icon{
+    .fas.fa-chess-king{
+      color: hsl(357, 98%, 50%);
+    }
+  }
+  a{
+    font-size: 40px;
+    text-decoration: none;
+    color: black;
+    
+  }
+  .muscle_detail__icon{
+    %i.fas.fa-chess-king{
+      color: hsl(357, 98%, 50%);
+      
+    }
+  }
+}
 
 .entry-page{
   height:calc(100vh - 100px);
