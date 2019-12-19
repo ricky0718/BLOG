@@ -15,6 +15,10 @@ class EntryController < ApplicationController
     @entry = Entry.find(params[:id])
   end
 
+  def muscle
+    @all_ranks = Entry.find(Like.group(:entry_id).order('count(entry_id) desc').limit(3).pluck(:entry_id))
+  end
+
   def edit
     @entry = Entry.find(params[:id])
   end
