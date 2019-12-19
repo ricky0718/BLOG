@@ -1,0 +1,72 @@
+.main
+  .main__inform
+    .main__inform__register
+      %h2 会員情報入力
+    .content
+      =form_for @user, url:signup_index_path, method: :post do |f|
+        .content__nickname
+          %label  ニックネーム
+          %span.form-require 必須
+          =f.text_field :name, placeholder: "例) 僧帽筋太郎", class: "input-default"
+          - if @user.errors.any?
+            - unless @user.valid?
+              - if errors = @user.errors.full_messages_for(:name)
+                %ul.error
+                  - errors.each do |error|
+                    %li=error
+        .content__mail
+          %label  メールアドレス
+          %span.form-require 必須
+          = f.email_field :email,placeholder: "PC・携帯どちらでも可",class: "input-default"
+          - if @user.errors.any?
+            - unless @user.valid?
+              - if errors = @user.errors.full_messages_for(:email)
+                %ul.error
+                  - errors.each do |error|
+                    %li=error
+        
+        .content__password
+          %label パスワード
+          %span.form-require 必須
+          = f.password_field :password, placeholder: "7文字以上",class: "input-default",autocomplete: "off"
+          - if @user.errors.any?
+            - unless @user.valid?
+              - if errors = @user.errors.full_messages_for(:password)
+                %ul.error
+                  - errors.each do |error|
+                    %li=error
+        .content__password
+          %label パスワード(再)
+          %span.form-require 必須
+          = f.password_field :password_confirmation,placeholder: "7文字以上",class: "input-default", autocomplete: "off"
+        .content__groupform
+          %label  都道府県
+          %span.form-require 必須
+          =f.collection_select :prefecture_id,Prefecture.all,:id,:name, {prompt: "---"}, class: "input-default"
+          - if @user.errors.any?
+            - unless @user.valid?
+              - if errors = @user.errors.full_messages_for(:prefecture_id)
+                %ul.error
+                  - errors.each do |error|
+                    %li=error
+        .content__muscle
+          %label  好きな筋肉
+          %span.form-require 必須
+          = f.text_field :muscle,placeholder: "例) 僧帽筋、馬の後ろ足の筋肉",class: "input-default"
+          - if @user.errors.any?
+            - unless @user.valid?
+              - if errors = @user.errors.full_messages_for(:email)
+                %ul.error
+                  - errors.each do |error|
+                    %li=error
+        .content__muscle
+          %label  好きな筋トレ
+          %span.form-require 必須
+          = f.text_field :muscle_training,placeholder: "例) ベンチプレス、チンニング",class: "input-default"
+          - if @user.errors.any?
+            - unless @user.valid?
+              - if errors = @user.errors.full_messages_for(:email)
+                %ul.error
+                  - errors.each do |error|
+                    %li=error
+        =f.submit "登録する",class:"next"

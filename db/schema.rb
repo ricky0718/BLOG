@@ -13,10 +13,10 @@
 ActiveRecord::Schema.define(version: 20191217033125) do
 
   create_table "entries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",                               null: false
     t.string   "title"
     t.text     "text",        limit: 65535
     t.string   "image"
-    t.integer  "user_id",                               null: false
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
     t.integer  "likes_count",               default: 0, null: false
@@ -36,6 +36,9 @@ ActiveRecord::Schema.define(version: 20191217033125) do
     t.string   "name",                                null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
+    t.integer  "prefecture_id",                       null: false
+    t.string   "muscle",                              null: false
+    t.string   "muscle_training",                     null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
