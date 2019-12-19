@@ -22,6 +22,12 @@
       = link_to "ログイン", new_user_session_path
     .header__rogin--signup
       = link_to "ブログをはじめる", new_user_registration_path, class:"sign"
+.muscle_detail
+  .muscle_detail__icon
+    %i.fas.fa-chess-king.fa-3x
+  = link_to "MUSCLE   RANKING",muscle_entry_index_path, class:".muscle_detail__1"
+  .muscle_detail__icon
+    %i.fas.fa-chess-king.fa-3x
 .entry-page
   .side-bar
     .side-bar__contents
