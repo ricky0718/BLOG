@@ -1,0 +1,123 @@
+.main{
+  height: 100%;
+  width: 100%;
+  background-image:url("https://ns328286.ip-37-187-113.eu/ew/wallpapers/800x480/02475_800x480.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  filter: opacity(70%);
+
+  &__inform{
+    width:700px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+    background-color: white;
+    border-radius: 8px;
+    filter: opacity(97%);
+
+
+    &__register{
+      font-size:22px;
+      padding:32px;
+      text-align: center;
+      line-height: 2.0;
+      h2{
+        font-weight: bold;
+      }
+    }
+    .content{
+      width:343px;
+      margin:0 auto;
+      label{
+        font-weight:600;
+        border-radius: 3px 3px 3px 3px;
+        padding-left:5px;
+      }
+      .input-default{
+        width:100%;
+        margin:8px 0 0;
+        height:48px;
+        border-radius: 7px 7px 7px 7px;
+        padding-left:5px;
+      }
+    
+      .form-require{
+        background-color: #ea352d;
+        color:white;  
+        font-size:12px;
+        padding:2px 4px;  
+        border-radius: 7px 7px 7px 7px;
+        padding-left:5px;
+      }
+    
+      .input-default-devide{
+        width:80%;
+        margin:8px 0 0;
+        height:48px;
+        border-radius: 7px 7px 7px 7px;
+        padding-left:5px;
+      }
+      &__name{
+        margin-top:24px;
+      }
+      &__mail{
+        margin-top:24px;
+      }
+      &__password{
+        margin-top: 24px;
+      }
+ 
+      &__repassword{
+        margin-top:24px;
+      }
+      &__groupform{
+        margin-top: 24px;
+      }
+      &__muscle{
+        margin-top:24px;
+      }
+      &__muscle-training{
+        margin-top:24px;
+        &__contents{
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+    .bottom{
+      margin-top:15px;
+      &__text{
+        font-size: 15px;
+        text-align: center;
+        a{
+          color:#0099e8;
+          text-decoration: none;
+          display: inline-block;
+        }
+      }
+      .next{
+        margin-top:24px;
+        display:block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        cursor: pointer;
+        text-align: center;
+        background: #ea352d;
+        color:white;
+      }
+      &__right{
+        margin-top:24px;
+        text-align: right;
+        a{
+          display: inline-block;
+          color:#0099e8;
+          text-decoration: none;            
+        }
+      }
+    }
+    
+  } 
+}
