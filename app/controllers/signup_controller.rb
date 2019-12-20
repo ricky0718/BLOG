@@ -9,7 +9,7 @@ class SignupController < ApplicationController
         sign_in User.find(@user.id) unless user_signed_in?
         redirect_to root_path(@user.id)
       else
-        render signup_index_path
+        render new_signup_path
       end
     end
   
