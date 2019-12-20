@@ -26,5 +26,24 @@
         = simple_format @entry.text
       .iine{"data-entry-id" => "#{@entry.id}", :id => "entry-#{@entry.id}"}
         = render "likes/like", entry: @entry
+  .container
+    - if current_user
+      = form_for [@entry, @comment] do |f|
+        = f.text_area :text, placeholder: "コメントする",class:"container__comments"
+        = f.submit "SEND",class:"container__send"
+    - else
+      %strong
+        %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+  .comments
+    %h4 ＜コメント一覧＞
+    - if @comments
+      - @comments.each do |comment|
+        %p
+          %strong
+            = link_to comment.user.name, "/users/#{comment.user_id}"
+            ：
+          = comment.text
+
+
 
   

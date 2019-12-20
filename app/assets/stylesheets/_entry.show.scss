@@ -8,7 +8,7 @@
   position: relative;
 
   .bgc-image{
-    height: 100%;
+    height: 900px;
     margin: 0 auto;
     padding: 0 auto;
     width: 100%;
@@ -88,4 +88,36 @@
       }
     }
   }
+  .container{
+    width: 1200px;
+    margin: 0 auto;
+    height: 150px;
+    position: relative;
+    &__comments{
+      position: absolute;
+      left: 270px;
+      top: 20px;
+      width: 600px;
+      height: 70px;
+      padding-left: 5px;
+      padding-top: 5px;
+      
+    }
+    &__send{
+      position: absolute;
+      position: absolute;
+      left: 430px;
+      top: 100px;
+      width: 300px;
+      height: 40px;
+      border-radius: 8px;
+      background-color: rgba(14, 157, 252, 0.6);
+      color: white;
+    }
+  }
+  .comments{
+    width: 600px;
+    margin: 0 auto;
+  }
+   
 }

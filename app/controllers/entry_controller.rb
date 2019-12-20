@@ -13,6 +13,8 @@ class EntryController < ApplicationController
 
   def show
     @entry = Entry.find(params[:id])
+    @comment = Comment.new
+    @comments = @entry.comments.includes(:user)
   end
 
   def muscle
