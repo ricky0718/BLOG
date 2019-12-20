@@ -7,6 +7,7 @@ class User < ApplicationRecord
   belongs_to_active_hash :prefecture
   has_many :entrys
   has_many :likes, dependent: :destroy
+  has_many :comments
 
 
   validates :name, presence: true, length: {maximum: 20}
