@@ -10,6 +10,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.integer :prefecture_id, null: false, foreign_key: true
       t.string :muscle, null: false
       t.string :muscle_training, null: false
+      t.string :user_image
+      t.string :introduce
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

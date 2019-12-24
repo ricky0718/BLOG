@@ -5,13 +5,15 @@ class SignupController < ApplicationController
 
   def create
     @user = User.new(user_params)
-      if @user.save!
+      if @user.save
         sign_in User.find(@user.id) unless user_signed_in?
         redirect_to root_path(@user.id)
       else
         render new_signup_path
       end
     end
+
+ 
   
     private
   

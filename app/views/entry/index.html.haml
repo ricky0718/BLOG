@@ -13,10 +13,13 @@
     .header__rogin--signup
       = link_to "ブログをはじめる", new_entry_path, class:"sign"
     .header__rogin--name
-      .header__rogin--name--user
-        name:
-      .header__rogin-name--current-user
-        = current_user.name
+      =link_to user_path(current_user) ,class:"header__rogin--name__mypage" do
+        =image_tag "iconmonstr-user-5-240.png",class:"nill-image"
+        マイページ
+      -# .header__rogin--name--user
+      -#   name:
+      -# .header__rogin-name--current-user
+      -#   = current_user.name
   - else
     .header__rogin--signin
       = link_to "ログイン", new_user_session_path
