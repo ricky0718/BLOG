@@ -12,6 +12,13 @@
 
 ActiveRecord::Schema.define(version: 20191220055528) do
 
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "entry_id"
@@ -47,6 +54,8 @@ ActiveRecord::Schema.define(version: 20191220055528) do
     t.integer  "prefecture_id",                       null: false
     t.string   "muscle",                              null: false
     t.string   "muscle_training",                     null: false
+    t.string   "user_image"
+    t.string   "introduce"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

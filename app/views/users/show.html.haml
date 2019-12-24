@@ -1,0 +1,34 @@
+.maincontents__page
+  - if user_signed_in? && current_user.id == @user.id
+    = link_to "編集する","#",class: 'user-edit__a'
+  .page__name
+    %p
+      = @user.name
+      さんのマイページ
+  .page__muscle
+    %p
+      好きな筋肉:
+      = @user.muscle
+  .page__muscle-training
+    %p
+      好きな筋トレ:
+      = @user.muscle_training
+  .page__a
+    = @user.name
+    さんの投稿一覧
+  .page__b
+    - @entrys.each do |entry|
+      .maincontents__page__entry
+        = link_to entry_path(entry.id) do
+          .maincontents__page__entry__title
+            .maincontents__page__entry__title__name
+              %p
+                タイトル:
+                = entry.title
+          .maincontents__page__entry__category
+            .maincontents__page__entry__category__center
+              .maincontents__page__entry__category__center__name
+                %p
+                カテゴリ：筋肉
+          .maincontents__page__entry__img
+            =image_tag entry.image.url.to_s,class:"image"
