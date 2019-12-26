@@ -66,5 +66,5 @@ gem 'pry-rails'
 gem 'rails-i18n'
 
 group :production do
-  gem 'pg', '0.19.0'
+  gem 'pg'
 end
