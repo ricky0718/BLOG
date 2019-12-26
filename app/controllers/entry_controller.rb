@@ -18,7 +18,7 @@ class EntryController < ApplicationController
   end
 
   def muscle
-    @all_ranks = Entry.find(Like.group(:entry_id).order('count(entry_id) desc').limit(3).pluck(:entry_id))
+    @all_ranks = Entry.find(Like.group(:entry_id).order('count(entry_id) desc').limit(1000).pluck(:entry_id))
   end
 
   def edit

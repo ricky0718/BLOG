@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'sqlite3'
 end
 
 group :development do
@@ -63,3 +64,7 @@ gem 'counter_culture'
 gem 'active_hash'
 gem 'pry-rails'
 gem 'rails-i18n'
+
+group :production do
+  gem 'pg', '~> 0.19.0'
+end
