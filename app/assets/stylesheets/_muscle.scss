@@ -1,6 +1,69 @@
+// .contents{
+//   display: flex;
+//   justify-content: space-between;
+//   .muscle_ranking__left{
+//     height: 1000px;
+//     width: 400px;
+//     background-image:url("https://ns328286.ip-37-187-113.eu/ew/wallpapers/800x480/02475_800x480.jpg");
+//     background-size: cover;
+//     background-attachment: fixed;
+//     background-position: center;
+//     padding-top: 100px;
+//     padding-bottom: 100px;
+//     position: fixed;
+//     filter: opacity(80%);
+//   }
+//   .muscle_ranking__right{
+//     height: 1000px;
+//     width: 400px;
+//     background-image:url("https://ns328286.ip-37-187-113.eu/ew/wallpapers/800x480/02475_800x480.jpg");
+//     background-size: cover;
+//     background-attachment: fixed;
+//     background-position: center;
+//     padding-top: 100px;
+//     padding-bottom: 100px;
+//     position: fixed;
+//     filter: opacity(80%);
+//   }
+// }
+
 .muscle_ranking{
   width: 700px;
-  margin: 0 auto;
+  margin-left: 470px;
+  
+  .maincontents__box__entry__ranking{
+    display: flex;
+    margin-left: 70px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    position: relative;
+    .king{
+      position: absolute;
+      left: 120px;
+      width: 100px;
+      top: -10px;
+
+    }
+    .maincontents__box__entry__ranking1{
+      font-size: 30px;
+      position: absolute;
+      left: 60px;
+      top: 40px;
+    }
+      
+    .maincontents__box__entry__ranking2{
+      font-size: 50px;
+      position: absolute;
+      left: 155px;
+    }
+      
+    .maincontents__box__entry__ranking3{
+      font-size: 30px;
+      position: absolute;
+      left: 250px;
+      top: 40px;
+    }
+  }
   .maincontents__box__entry{
     text-decoration: none;
     display: block;
@@ -14,22 +77,8 @@
     border: solid 1px lightgray;
     border-radius: 8px 8px 8px 8px;
     text-decoration: none;
-    .maincontents__box__entry__ranking{
-      display: flex;
-      margin: 0 auto;
-      .maincontents__box__entry__ranking{
-        font-size: 20px;
-      }
-        
-      .maincontents__box__entry__ranking{
-        font-size: 20px;
-      }
-        
-      .maincontents__box__entry__ranking{
-        font-size: 20px;
-      }
-        
-    }
+    
+    
     &__title{
       display: flex;
       position: relative;

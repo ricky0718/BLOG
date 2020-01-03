@@ -1,14 +1,19 @@
+.contents
+  .muscle_ranking__right
+  .muscle_ranking__left
 .muscle_ranking
+  .muscle_ranking
   - @all_ranks.each.with_index(1) do |entry, i| 
+    .maincontents__box__entry__ranking
+      =image_tag "publicdomainq-0024228agxcpl.png",class:"king"
+      .maincontents__box__entry__ranking1
+        第
+      .maincontents__box__entry__ranking2
+        = i
+      .maincontents__box__entry__ranking3
+        位
     .maincontents__box__entry
       = link_to entry_path(entry.id) do
-        .maincontents__box__entry__ranking
-          .maincontents__box__entry__ranking
-            第
-          .maincontents__box__entry__ranking
-            = i
-          .maincontents__box__entry__ranking
-            位
         .maincontents__box__entry__title
           .maincontents__box__entry__title__name
             = entry.title
