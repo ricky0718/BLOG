@@ -14,6 +14,10 @@
       = link_to "ブログをはじめる", new_entry_path, class:"sign"
     .header__rogin--name
       =link_to user_path(current_user) ,class:"header__rogin--name__mypage" do
+        -# - if @user.user_image?
+        -#   = image_tag @user.user_image.url,class:"nill-image"
+        -# - else
+        -#   = image_tag "iconmonstr-user-5-240.png",class:"nill-image"
         =image_tag "iconmonstr-user-5-240.png",class:"nill-image"
         マイページ
       -# .header__rogin--name--user
@@ -51,6 +55,8 @@
             .maincontents__box__entry__title
               .maincontents__box__entry__title__name
                 = entry.title
+              .maincontents__box__entry__title__userimage
+                =entry.user.user_image
               .maincontents__box__entry__title__user
                 =entry.user.name
             .maincontents__box__entry__category

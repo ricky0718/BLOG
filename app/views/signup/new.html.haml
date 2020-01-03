@@ -45,6 +45,12 @@
                 %ul.error
                   - errors.each do |error|
                     %li=error
+        .content_image
+          - if @user.user_image?
+            = image_tag @user.user_image.url,class: "userimage"
+          - else
+            = image_tag "iconmonstr-user-5-240.png"
+          = f.file_field :user_image, class: "userimage"
         .content__groupform
           %label  都道府県
           %span.form-require 必須

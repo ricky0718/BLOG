@@ -2,6 +2,8 @@ class EntryController < ApplicationController
   def index
     @entries = Entry.includes(:user)
     @entries = Entry.all.order("created_at DESC")
+    # @user = User.find(params[:user_id])
+
   end
   def new
     @entry = Entry.new

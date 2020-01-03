@@ -25,7 +25,9 @@ class SignupController < ApplicationController
       :password_confirmation,
       :prefecture_id,
       :muscle,
-      :muscle_training
+      :muscle_training,
+      :introduce,
+      :user_image
     )
     end
   end
