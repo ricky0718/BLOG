@@ -18,8 +18,17 @@
       .entry-show__detail
         .entry-show__detail__title
           =@entry.title
-        .entry-show__detail__name
-          =@entry.user.name
+        .entry-show__detail__user
+          =link_to user_path(@entry.user),class: "entry-show__detail__user" do
+            .entry-show__detail__user__image
+              - if @entry.user.user_image?
+                = image_tag @entry.user.user_image.url, id: :img_prev,class:"nill-image"
+              - else
+                = image_tag "iconmonstr-user-5-240.png",class:"nill-image"
+                -# = entry.user.user_image.url.to_s
+            .entry-show__detail__user__name
+              =@entry.user.name
+              
         .entry-show__detail__entryCategory
           カテゴリ
       .entryText
@@ -39,10 +48,9 @@
     %h4 ＜コメント一覧＞
     - if @comments
       - @comments.each do |comment|
-        %strong
+        %p
           = link_to comment.user.name, "/users/#{comment.user_id}"
           ：
-        .comment-text
           = comment.text
 
 

@@ -67,7 +67,6 @@
   .maincontents__box__entry{
     text-decoration: none;
     display: block;
-    cursor: pointer;
     filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.6));
     margin:  80px 40px;
     display: inline-block;
@@ -97,13 +96,33 @@
       }
         //題名
       &__user{
+        display: flex;
+        position: relative;
         position: absolute;
         right: 10px;
-        top: 30px;
-        color: green;
+        top: 6px;
         text-decoration: none;
-
+        // .a{
+        // position: absolute;
+        // right: 10px;
+        // top: 20px;
+        // }
+        &__image{
+          
+          .nill-image{
+            width: 30px;
+            border-radius: 100px;
+          }
+        }
+          //題名
+        &__name{
+          padding-left: 4px;
+          color: green;
+          text-decoration: none;
+        }
+        
       }
+          //user
         //user
     }
     &__category{

@@ -17,29 +17,53 @@
     // %p
     //   = @name
     //   さんのマイページ
+  .page__image{
+    .image{
+      height: 200px;
+      position: absolute;
+      left: 300px;
+      top: 110px;
+    }
+  }
   .page__muscle{
     position: absolute;
-    left: 320px;
+    left: 620px;
     top: 60px;
-
+    font-size: 20px;
   }
     // %p
     //   好きな筋肉:
     //   = @muscle
   .page__muscle-training{
     position: absolute;
-    left: 320px;
+    left: 620px;
     top: 90px;
-
+    font-size: 20px;
   }
     // %p
     //   好きな筋トレ:
     //   = @muscle_training
+  .page__introduce{
+    position: absolute;
+    left: 620px;
+    top: 120px;
+    font-size: 20px;
+    &__name{
+
+    }
+    &__text{
+      width: 400px;
+      height: 200px;
+      border: solid 1px black;
+
+    }
+  }
   .page__a{
     width: 100%;
     position: absolute;
     left: 220px;
-    top: 130px;
+    top: 380px;
+    font-size: 40px;
    
 
   }
@@ -48,7 +72,7 @@
   .page__b{
     position: absolute;
     left: 100px;
-    top: 100px;
+    top: 400px;
     .maincontents__page__entry{
       
       text-decoration: none;
