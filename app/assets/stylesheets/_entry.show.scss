@@ -58,12 +58,27 @@
           margin-top: 5px;
           text-align: center;
         }
-        &__name{
+        &__user{
           position: absolute;
+          display: flex;
           right: 55px;
-          top:25px;
-          text-align: center;
-          font-size: 20px;
+          top: 10px;
+          text-decoration: none;
+          color: black;
+          .a{
+
+          }
+          &__image{
+            
+            .nill-image{
+            border-radius: 8px 8px 8px 8px;
+            height: 30px;
+            }
+          }
+          &__name{
+            text-align: center;
+            font-size: 20px;
+          }
         }
         &__entryCategory{
           height: 50px;

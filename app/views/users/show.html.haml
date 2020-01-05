@@ -5,6 +5,11 @@
     %p
       = @user.name
       さんのマイページ
+  .page__image
+    - if @user.user_image?
+      = image_tag @user.user_image.url,class:"image"
+    - else
+      = image_tag "iconmonstr-user-5-240.png",class:"image"
   .page__muscle
     %p
       好きな筋肉:
@@ -13,6 +18,11 @@
     %p
       好きな筋トレ:
       = @user.muscle_training
+  .page__introduce
+    .page__introduce__name
+      自己紹介文
+    .page__introduce__text
+      = @user.introduce
   .page__a
     = @user.name
     さんの投稿一覧

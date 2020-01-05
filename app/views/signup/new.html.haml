@@ -45,12 +45,19 @@
                 %ul.error
                   - errors.each do |error|
                     %li=error
-        .content_image
+        .content__image
+          %label  プロフィール写真
+          %span.norequire 任意
           - if @user.user_image?
-            = image_tag @user.user_image.url,class: "userimage"
+            = image_tag @user.user_image.url, id: :img_prev,class: "userimage"
           - else
             = image_tag "iconmonstr-user-5-240.png"
           = f.file_field :user_image, class: "userimage"
+        .content__introduce
+          %label  自己紹介文
+          %span.norequire 任意
+          =f.text_area :introduce, placeholder:'例) 最近は上半身中心に筋トレやってます。一緒にジム行ける方探しています。よければDMください。',class:"userintroduce"
+
         .content__groupform
           %label  都道府県
           %span.form-require 必須

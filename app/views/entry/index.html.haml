@@ -14,11 +14,10 @@
       = link_to "ブログをはじめる", new_entry_path, class:"sign"
     .header__rogin--name
       =link_to user_path(current_user) ,class:"header__rogin--name__mypage" do
-        -# - if @user.user_image?
-        -#   = image_tag @user.user_image.url,class:"nill-image"
-        -# - else
-        -#   = image_tag "iconmonstr-user-5-240.png",class:"nill-image"
-        =image_tag "iconmonstr-user-5-240.png",class:"nill-image"
+        - if current_user.user_image?
+          = image_tag current_user.user_image.url,class:"nill-image"
+        - else
+          = image_tag "iconmonstr-user-5-240.png",class:"nill-image"
         マイページ
       -# .header__rogin--name--user
       -#   name:
@@ -51,19 +50,26 @@
     .maincontents__box
       - @entries.each do |entry|
         .maincontents__box__entry
-          = link_to entry_path(entry.id) do
-            .maincontents__box__entry__title
-              .maincontents__box__entry__title__name
+          .maincontents__box__entry__title
+            .maincontents__box__entry__title__name
+              = link_to entry_path(entry.id) do
                 = entry.title
-              .maincontents__box__entry__title__userimage
-                =entry.user.user_image
-              .maincontents__box__entry__title__user
-                =entry.user.name
-            .maincontents__box__entry__category
-              .maincontents__box__entry__category__center
-                .maincontents__box__entry__category__center__name
-                  カテゴリ：
-                .maincontents__box__entry__category__center__type
-                  筋肉
-            .maincontents__box__entry__img
+            .maincontents__box__entry__title__user
+              =link_to user_path(entry.user),class: "maincontents__box__entry__title__user" do
+                .maincontents__box__entry__title__user__userimage
+                  - if entry.user.user_image?
+                    = image_tag entry.user.user_image.url, id: :img_prev,class:"nill-image"
+                  - else
+                    = image_tag "iconmonstr-user-5-240.png",class:"nill-image"
+                    -# = entry.user.user_image.url.to_s
+                .maincontents__box__entry__title__user__name
+                  =entry.user.name
+          .maincontents__box__entry__category
+            .maincontents__box__entry__category__center
+              .maincontents__box__entry__category__center__name
+                カテゴリ：
+              .maincontents__box__entry__category__center__type
+                筋肉
+          .maincontents__box__entry__img
+            = link_to entry_path(entry.id) do
               =image_tag entry.image.url.to_s,class:"image"

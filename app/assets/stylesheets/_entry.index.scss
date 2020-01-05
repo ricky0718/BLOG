@@ -202,7 +202,6 @@
       &__entry{
         text-decoration: none;
         display: block;
-        cursor: pointer;
         filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.6));
         margin:  80px 40px;
         display: inline-block;
@@ -217,7 +216,6 @@
           display: flex;
           position: relative;
           border-bottom: solid 1px lightgray;
-          text-decoration: none;
           &__name{
             font-family: serif;
             line-height: 50px;
@@ -228,15 +226,36 @@
             margin: 0 auto;
             text-align: center;
             text-decoration: none;
+            .a{
+              text-decoration: none;
+            }
           }
-            //題名
           &__user{
+            display: flex;
+            position: relative;
             position: absolute;
             right: 10px;
-            top: 30px;
-            color: green;
+            top: 10px;
             text-decoration: none;
-
+            // .a{
+            // position: absolute;
+            // right: 10px;
+            // top: 20px;
+            // }
+            &__userimage{
+              
+              .nill-image{
+                width: 30px;
+                border-radius: 100px;
+              }
+            }
+              //題名
+            &__name{
+              padding-left: 4px;
+              color: green;
+              text-decoration: none;
+            }
+            
           }
             //user
         }
