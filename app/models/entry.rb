@@ -5,6 +5,8 @@ class Entry < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :iine_users, through: :likes, source: :user
+  has_many :entry_category_relations
+  has_many :categories, through: :entry_category_relations
 
    # マイクロポストをいいねする
   def iine(user)
