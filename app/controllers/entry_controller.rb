@@ -2,6 +2,7 @@ class EntryController < ApplicationController
   def index
     @entries = Entry.includes(:user)
     @entries = Entry.all.order("created_at DESC")
+    # @entry = Entry.find(params[:id])
     # @user = User.find(params[:user_id])
 
   end
@@ -39,7 +40,7 @@ class EntryController < ApplicationController
   end
   private
   def entry_params
-    params.require(:entry).permit(:title,:image,:text).merge(user_id: current_user.id)
+    params.require(:entry).permit(:title,:image,:text,category_ids: []).merge(user_id: current_user.id)
   end
 
 end
