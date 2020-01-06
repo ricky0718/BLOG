@@ -62,7 +62,7 @@
           position: absolute;
           display: flex;
           right: 55px;
-          top: 10px;
+          top: 5px;
           text-decoration: none;
           color: black;
           .a{
@@ -71,13 +71,16 @@
           &__image{
             
             .nill-image{
-            border-radius: 8px 8px 8px 8px;
-            height: 30px;
+            border-radius: 100px;
+            height: 40px;
+            width: 40px;
             }
           }
           &__name{
             text-align: center;
             font-size: 20px;
+            padding-top: 5px;
+            padding-left: 5px;
           }
         }
         &__entryCategory{

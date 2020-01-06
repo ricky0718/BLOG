@@ -115,6 +115,9 @@
     color: black;
     
   }
+  .muscle_detail__1{
+    text-decoration: none;
+  }
   .muscle_detail__icon{
     %i.fas.fa-chess-king{
       color: hsl(357, 98%, 50%);
@@ -235,7 +238,7 @@
             position: relative;
             position: absolute;
             right: 10px;
-            top: 10px;
+            top: 5px;
             text-decoration: none;
             // .a{
             // position: absolute;
@@ -245,13 +248,15 @@
             &__userimage{
               
               .nill-image{
-                width: 30px;
+                width: 40px;
+                height: 40px;
                 border-radius: 100px;
               }
             }
               //題名
             &__name{
               padding-left: 4px;
+              padding-top: 5px;
               color: green;
               text-decoration: none;
             }

@@ -31,7 +31,7 @@
 .muscle_detail
   .muscle_detail__icon
     %i.fas.fa-chess-king.fa-3x
-  = link_to "MUSCLE   RANKING",muscle_entry_index_path, class:".muscle_detail__1"
+  = link_to "MUSCLE   RANKING",muscle_entry_index_path, class:"muscle_detail__1"
   .muscle_detail__icon
     %i.fas.fa-chess-king.fa-3x
 .entry-page
@@ -52,7 +52,7 @@
         .maincontents__box__entry
           .maincontents__box__entry__title
             .maincontents__box__entry__title__name
-              = link_to entry_path(entry.id) do
+              = link_to entry_path(entry.id), class: "maincontents__box__entry__title__name" do
                 = entry.title
             .maincontents__box__entry__title__user
               =link_to user_path(entry.user),class: "maincontents__box__entry__title__user" do

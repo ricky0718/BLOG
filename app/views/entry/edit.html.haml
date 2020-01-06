@@ -6,7 +6,11 @@
           ブログの編集
         = f.text_field :title, placeholder: 'タイトル',class:"main__entry__title"
         .main__entry__category
-          カテゴリ
+          = f.label :category, 'カテゴリ'
+          = f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category|
+            = category.label do
+              = category.check_box
+              = category.text
         .main__entry__image
         = f.label :image, class: "main__entry__image__icon" do
           = fa_icon "image",class: 'icon'
