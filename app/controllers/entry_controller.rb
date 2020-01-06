@@ -10,10 +10,14 @@ class EntryController < ApplicationController
     @entry = Entry.new
   end
   def create
-    Entry.create(entry_params)
-    redirect_to root_path
+    @entry = Entry.new(entry_params)
+    if @entry.save
+      redirect_to root_path
+    else  
+      render new_entry_path
+    end
   end
-
+  
   def show
     @entry = Entry.find(params[:id])
     @comment = Comment.new
