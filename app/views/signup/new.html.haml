@@ -60,7 +60,7 @@
 
         .content__groupform
           %label  都道府県
-          %span.form-require 必須
+          %span.norequire 任意
           =f.collection_select :prefecture_id,Prefecture.all,:id,:name, {prompt: "---"}, class: "input-default"
           - if @user.errors.any?
             - unless @user.valid?
@@ -70,7 +70,7 @@
                     %li=error
         .content__muscle
           %label  好きな筋肉
-          %span.form-require 必須
+          %span.norequire 任意
           = f.text_field :muscle,placeholder: "例) 僧帽筋、馬の後ろ足の筋肉",class: "input-default"
           - if @user.errors.any?
             - unless @user.valid?
@@ -80,7 +80,7 @@
                     %li=error
         .content__muscle-training
           %label  好きな筋トレ
-          %span.form-require 必須
+          %span.norequire 任意
           = f.text_field :muscle_training,placeholder: "例) ベンチプレス、チンニング",class: "input-default"
           - if @user.errors.any?
             - unless @user.valid?
