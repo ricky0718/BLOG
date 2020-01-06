@@ -115,6 +115,9 @@
     color: black;
     
   }
+  .muscle_detail__1{
+    text-decoration: none;
+  }
   .muscle_detail__icon{
     %i.fas.fa-chess-king{
       color: hsl(357, 98%, 50%);
@@ -148,7 +151,7 @@
   .maincontents{
     height: 100%;
     width:calc(100vw - 200px);
-    background-color: #FFF8DC;
+    background-color: white;
     &__header{
       border-bottom: solid 1px gray;
       height: 90px;
@@ -192,8 +195,17 @@
         }
       }
     }
+    &__name{
+      padding-left: 10px;
+      padding-top: 10px;
+      width: 100%;
+      height: 100px;
+      border-bottom: solid 1px black;
+      font-size: 50px;
+      
+    }
     &__box{
-      height:calc(100vh - 190px);
+      height:calc(100vh - 200px);
       width:calc(100vw - 200px);
       overflow-x: auto;
       white-space: nowrap;
@@ -235,7 +247,7 @@
             position: relative;
             position: absolute;
             right: 10px;
-            top: 10px;
+            top: 5px;
             text-decoration: none;
             // .a{
             // position: absolute;
@@ -245,13 +257,15 @@
             &__userimage{
               
               .nill-image{
-                width: 30px;
+                width: 40px;
+                height: 40px;
                 border-radius: 100px;
               }
             }
               //題名
             &__name{
               padding-left: 4px;
+              padding-top: 5px;
               color: green;
               text-decoration: none;
             }
