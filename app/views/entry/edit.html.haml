@@ -6,10 +6,14 @@
           ブログの編集
         = f.text_field :title, placeholder: 'タイトル',class:"main__entry__title"
         .main__entry__category
-          カテゴリ
+          = f.label :category, 'カテゴリ'
+          = f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category|
+            = category.label do
+              = category.check_box
+              = category.text
         .main__entry__image
         = f.label :image, class: "main__entry__image__icon" do
           = fa_icon "image",class: 'icon'
           = f.file_field :image, class: "main-form__image--default"
         =f.text_area :text, placeholder:'ブログ本文',class:"main__entry__message"
-        =f.submit 'ブログを投稿する',class: 'send'
+        =f.submit 'ブログを更新する',class: 'send'

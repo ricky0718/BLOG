@@ -1,0 +1,71 @@
+.mains
+  .mains__inform
+    .mains__inform__register
+      %h2 会員情報入力
+    .content
+      =form_for (current_user), url:user_path, method: :patch do |f|
+        .content__name
+          %label  ニックネーム
+          %span.form-require 必須
+          =f.text_field :name, placeholder: "例) 僧帽筋太郎", class: "input-default"
+          -# - if @user.errors.any?
+          -#   - unless @user.valid?
+          -#     - if errors = @user.errors.full_messages_for(:name)
+          -#       %ul.error
+          -#         - errors.each do |error|
+          -#           %li=error
+        .content__mail
+          %label  メールアドレス
+          %span.form-require 必須
+          = f.email_field :email,placeholder: "PC・携帯どちらでも可",class: "input-default"
+          -# - if @user.errors.any?
+          -#   - unless @user.valid?
+          -#     - if errors = @user.errors.full_messages_for(:email)
+          -#       %ul.error
+          -#         - errors.each do |error|
+          -#           %li=error
+        .content__image
+          %label  プロフィール写真
+          %span.norequire 任意
+          - if current_user.user_image?
+            = image_tag current_user.user_image.url, id: :img_prev,class: "userimage"
+          - else
+            = image_tag "iconmonstr-user-5-240.png"
+          = f.file_field :user_image, class: "userimage"
+        .content__introduce
+          %label  自己紹介文
+          %span.norequire 任意
+          =f.text_area :introduce, placeholder:'例) 最近は上半身中心に筋トレやってます。一緒にジム行ける方探しています。よければDMください。',class:"userintroduce"
+
+        .content__groupform
+          %label  都道府県
+          %span.form-require 必須
+          =f.collection_select :prefecture_id,Prefecture.all,:id,:name, {prompt: "---"}, class: "input-default"
+          -# - if @user.errors.any?
+          -#   - unless @user.valid?
+          -#     - if errors = @user.errors.full_messages_for(:prefecture_id)
+          -#       %ul.error
+          -#         - errors.each do |error|
+          -#           %li=error
+        .content__muscle
+          %label  好きな筋肉
+          %span.form-require 必須
+          = f.text_field :muscle,placeholder: "例) 僧帽筋、馬の後ろ足の筋肉",class: "input-default"
+          -# - if @user.errors.any?
+          -#   - unless @user.valid?
+          -#     - if errors = @user.errors.full_messages_for(:muscle)
+          -#       %ul.error
+          -#         - errors.each do |error|
+          -#           %li=error
+        .content__muscle-training
+          %label  好きな筋トレ
+          %span.form-require 必須
+          = f.text_field :muscle_training,placeholder: "例) ベンチプレス、チンニング",class: "input-default"
+          -# - if @user.errors.any?
+          -#   - unless @user.valid?
+          -#     - if errors = @user.errors.full_messages_for(:muscle_training)
+          -#       %ul.error
+          -#         - errors.each do |error|
+          -#           %li=error
+        .bottom
+          =f.submit "更新する",class:"next"

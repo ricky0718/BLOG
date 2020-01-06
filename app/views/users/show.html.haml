@@ -1,6 +1,6 @@
 .maincontents__page
   - if user_signed_in? && current_user.id == @user.id
-    = link_to "編集する","#",class: 'user-edit__a'
+    = link_to "編集する",edit_user_path(@user.id),class: 'user-edit__a'
   .page__name
     %p
       = @user.name
