@@ -82,6 +82,10 @@
       }
       &__image{
         margin-top: 24px;
+        .userimage{
+          height: 300px;
+          width: 350px;
+        }
       }
       &__introduce{
         margin-top: 24px;

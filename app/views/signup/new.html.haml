@@ -51,8 +51,8 @@
           - if @user.user_image?
             = image_tag @user.user_image.url, id: :img_prev,class: "userimage"
           - else
-            = image_tag "iconmonstr-user-5-240.png"
-          = f.file_field :user_image, class: "userimage"
+            = image_tag "iconmonstr-user-5-240.png",class: "userimage"
+          = f.file_field :user_image
         .content__introduce
           %label  自己紹介文
           %span.norequire 任意
