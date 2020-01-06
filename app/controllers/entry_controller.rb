@@ -38,6 +38,13 @@ class EntryController < ApplicationController
     entry.destroy
     redirect_to root_path
   end
+
+  def search
+    # @entry = Entry.search(params[:keyword])
+    @keyword = params[:keyword]
+    @entrys = Entry.where('name LIKE(?) OR description LIKE(?)', "%#{@keyword}%", "%#{@keyword}%")
+    
+  end
   private
   def entry_params
     params.require(:entry).permit(:title,:image,:text,category_ids: []).merge(user_id: current_user.id)

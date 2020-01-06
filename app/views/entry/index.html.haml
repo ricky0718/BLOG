@@ -42,11 +42,17 @@
   .maincontents
     .maincontents__header
       .maincontents__header__contents
-        .maincontents__header__contents--search
-          .form__search
-            text
-        .maincontents__header__contents--send
-          %i.fa.fa-search.fa-2x
+        -# = form_for url:search_entry_index,class: ".maincontents__header__contents--search"  do |f|
+        -#   = f.text_field :keyword, placeholder: "ブログを検索する", class: "form__search"
+        -#     -# search_entry_index
+        -#   = f.submit "検索する"
+        -#   -# %i.fa.fa-search.fa-2x
+        -# .contents.row
+        -#   - @entry.each do |entry|
+        -#     = render partial: "tweet", locals: { entry: entry }
+        = form_tag(search_entry_index_path, method: :get, class: 'maincontents__header__contents--search') do
+          %input.form__search{name: "keyword", placeholder: "ブログを検索する", type: "text", value: ""}
+          %button.fa.fa-search.fa-2x{title: "検索", type: "submit"}
     .maincontents__box
       - @entries.each do |entry|
         .maincontents__box__entry

@@ -8,6 +8,10 @@ class Entry < ApplicationRecord
   has_many :entry_category_relations
   has_many :categories, through: :entry_category_relations
 
+  def self.search(search)
+    return Entry.all unless search
+    Entry.where('text LIKE(?)', "%#{search}%")
+  end
    # マイクロポストをいいねする
   def iine(user)
     likes.create(user_id: user.id)
