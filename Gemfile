@@ -57,6 +57,7 @@ gem "font-awesome-rails"
 gem "font-awesome-sass"
 gem 'font_awesome5_rails'
 gem 'carrierwave'
+gem 'fog-aws'
 gem 'mini_magick'
 gem 'devise'
 gem 'bootstrap', '~> 4.1.1'
