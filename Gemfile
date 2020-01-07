@@ -65,6 +65,7 @@ gem 'counter_culture'
 gem 'active_hash'
 gem 'pry-rails'
 gem 'rails-i18n'
+gem 'dotenv-rails'
 
 group :production do
   gem 'pg'

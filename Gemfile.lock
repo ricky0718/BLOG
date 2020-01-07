@@ -83,6 +83,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dotenv (2.7.5)
+    dotenv-rails (2.7.5)
+      dotenv (= 2.7.5)
+      railties (>= 3.2, < 6.1)
     erb2haml (0.1.5)
       html2haml
     erubis (2.7.0)
@@ -268,6 +272,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   counter_culture
   devise
+  dotenv-rails
   erb2haml
   fog-aws
   font-awesome-rails
