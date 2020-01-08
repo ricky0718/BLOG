@@ -7,7 +7,9 @@ class Entry < ApplicationRecord
   has_many :iine_users, through: :likes, source: :user
   has_many :entry_category_relations
   has_many :categories, through: :entry_category_relations
-
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :entrycategory
+ 
 
   validates :title, presence: true, length: {maximum: 10}
   validates :image, presence: true

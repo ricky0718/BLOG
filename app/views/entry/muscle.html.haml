@@ -32,8 +32,9 @@
           .maincontents__box__entry__category__center__name
             カテゴリ：
           .maincontents__box__entry__category__center__type
-            - entry.entry_category_relations.each do |entry_category_relations|
-              = entry_category_relations.category.name
+            = entry.entrycategory.name
+            -# - entry.entry_category_relations.each do |entry_category_relations|
+            -#   = entry_category_relations.category.name
       .maincontents__box__entry__img
         = link_to entry_path(entry.id) do
           =image_tag entry.image.url.to_s,class:"image"

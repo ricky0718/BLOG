@@ -31,8 +31,9 @@
         .entry-show__detail__entryCategory
           %p
             カテゴリ:
-            - @entry.entry_category_relations.each do |entry_category_relations|
-              = entry_category_relations.category.name
+            = @entry.entrycategory.name
+            -# - @entry.entry_category_relations.each do |entry_category_relations|
+            -#   = entry_category_relations.category.name
       .entryText
         = simple_format @entry.text
       .iine{"data-entry-id" => "#{@entry.id}", :id => "entry-#{@entry.id}"}

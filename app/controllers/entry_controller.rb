@@ -1,7 +1,7 @@
 class EntryController < ApplicationController
   def index
     @entries = Entry.includes(:user)
-    @entries = Entry.all.order("created_at DESC")
+    @entriess = Entry.all.order("created_at DESC")
     # @entry = Entry.find(params[:id])
     # @user = User.find(params[:user_id])
 
@@ -48,7 +48,7 @@ class EntryController < ApplicationController
   end
   private
   def entry_params
-    params.require(:entry).permit(:title,:image,:text,category_ids: []).merge(user_id: current_user.id)
+    params.require(:entry).permit(:title,:image,:entrycategory_id,:text,category_ids: []).merge(user_id: current_user.id)
   end
 
 end

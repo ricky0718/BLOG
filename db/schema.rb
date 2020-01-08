@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200106033756) do
+ActiveRecord::Schema.define(version: 20200108082029) do
 
   create_table "affiliations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -36,13 +36,14 @@ ActiveRecord::Schema.define(version: 20200106033756) do
   end
 
   create_table "entries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",                               null: false
+    t.integer  "user_id",                                    null: false
     t.string   "title"
-    t.text     "text",        limit: 65535
+    t.text     "text",             limit: 65535
     t.string   "image"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-    t.integer  "likes_count",               default: 0, null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.integer  "likes_count",                    default: 0, null: false
+    t.integer  "entrycategory_id"
   end
 
   create_table "entry_category_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -92,9 +93,7 @@ ActiveRecord::Schema.define(version: 20200106033756) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["name"], name: "index_users_on_name", using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   add_foreign_key "affiliations", "rooms"
