@@ -7,9 +7,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
-  has_many :entrys
+  has_many :entrys, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
 
   validates :name, presence: true, length: {maximum: 7}

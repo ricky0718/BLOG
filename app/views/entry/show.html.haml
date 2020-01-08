@@ -11,8 +11,7 @@
           %div 本当に削除しますか？
         %button#modal-close-btn キャンセル
         %button#delete-comformation-btn 削除する
-    .edit
-      = link_to "編集する",edit_entry_path(@entry.id)
+    = link_to "編集する",edit_entry_path(@entry.id),class: "edit"
   .main-show
     .entry-show
       .entry-show__detail

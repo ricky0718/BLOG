@@ -1,7 +1,16 @@
 .maincontents__page
   - if user_signed_in? && current_user.id == @user.id
     = link_to "編集する",edit_user_path(@user.id),class: 'user-edit__a'
-
+  - if user_signed_in? && current_user.id == @user.id
+    %button#modal-open-btn.deletebtn 退会する 
+    = link_to "", user_path(@user.id), method: :DELETE, id: 'delete-btn'
+    #overlay
+      #modalWindow
+        .modal-message-box
+          %div 確認
+          %div 本当に退会しますか？
+        %button#modal-close-btn キャンセル
+        %button#delete-comformation-btn 退会する
   .page__name
     %p
       = @user.name
@@ -40,6 +49,9 @@
             .maincontents__page__entry__category__center
               .maincontents__page__entry__category__center__name
                 %p
-                カテゴリ：筋肉
+                カテゴリ：
+                - entry.entry_category_relations.each do |entry_category_relations|
+                  = entry_category_relations.category.name
           .maincontents__page__entry__img
             =image_tag entry.image.url.to_s,class:"image"
+           
