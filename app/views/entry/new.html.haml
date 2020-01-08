@@ -4,7 +4,7 @@
       =form_for @entry, url:entry_index_path  do |f|
         .main__entry__name
           新規記事の作成
-        = f.text_field :title, placeholder: 'タイトル',class:"main__entry__title"
+        = f.text_field :title, placeholder: 'タイトル(１０文字以内)',class:"main__entry__title"
         .main__entry__category
           = f.label :category, 'カテゴリ'
           = f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category|

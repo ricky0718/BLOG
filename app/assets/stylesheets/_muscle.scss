@@ -93,35 +93,44 @@
         margin: 0 auto;
         text-align: center;
         text-decoration: none;
+
+        a{
+          text-decoration: none;
+        }
       }
         //題名
+      
       &__user{
         display: flex;
         position: relative;
         position: absolute;
-        right: 10px;
-        top: 6px;
+        right: 1px;
+        top: 28px;
         text-decoration: none;
-        // .a{
-        // position: absolute;
-        // right: 10px;
-        // top: 20px;
-        // }
+        .a{
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        }
         &__image{
           
           .nill-image{
-            width: 30px;
+            width: 40px;
+            height: 40px;
             border-radius: 100px;
           }
         }
           //題名
         &__name{
           padding-left: 4px;
+          padding-top: 5px;
+          width: 120px;
           color: green;
           text-decoration: none;
         }
         
       }
+        //user
           //user
         //user
     }
@@ -132,18 +141,20 @@
       text-decoration: none;
 
       &__center{
-        height: 50px;
+        height: 48px;
         line-height: 60px;
         display: flex;
 
 
         &__name{
           font-family: fantasy;
+          font-size: 10px;
           text-decoration: none;
           color: orange;
         }
           //カテゴリ：
         &__type{
+          font-size: 13px;
           line-height: 60px;
           font-family: fantasy;
           color: green;

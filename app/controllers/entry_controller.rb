@@ -25,7 +25,7 @@ class EntryController < ApplicationController
   end
 
   def muscle
-    @all_ranks = Entry.find(Like.group(:entry_id).order('count(entry_id) desc').limit(1000).pluck(:entry_id))
+    @all_ranks = Entry.find(Like.group(:entry_id).order('count(entry_id) desc').limit(9).pluck(:entry_id))
   end
 
   def edit
@@ -34,8 +34,12 @@ class EntryController < ApplicationController
 
   def update
     @entry = Entry.find(params[:id])
-    @entry.update(entry_params)
-    redirect_to root_path
+    if @entry.update(entry_params)
+      redirect_to root_path
+    else  
+      render :edit
+    end
+   
   end
   def destroy
     entry = Entry.find(params[:id])
