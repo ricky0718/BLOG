@@ -66,6 +66,7 @@ gem 'active_hash'
 gem 'pry-rails'
 gem 'rails-i18n'
 gem 'dotenv-rails'
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
 group :production do
   gem 'pg'
