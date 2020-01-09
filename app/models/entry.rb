@@ -11,7 +11,7 @@ class Entry < ApplicationRecord
   belongs_to_active_hash :entrycategory
  
 
-  validates :title, presence: true, length: {maximum: 10}
+  validates :title, presence: true, length: {maximum: 20}
   validates :image, presence: true
   validates :text, presence: true
 

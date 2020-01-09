@@ -4,7 +4,7 @@
       =form_for @entry, url:entry_index_path  do |f|
         .main__entry__name
           新規記事の作成
-        = f.text_field :title, placeholder: 'タイトル(１０文字以内)',class:"main__entry__title"
+        = f.text_field :title, placeholder: 'タイトル(20文字以内)',class:"main__entry__title"
         .main__entry__category
           %label  カテゴリー
           =f.collection_select :entrycategory_id,Entrycategory.all,:id,:name, {prompt: "---"}, {class: "input-default"}

@@ -3,11 +3,11 @@
     .mains__inform__register
       %h2 会員情報入力
     .content
-      =form_for (current_user), url:user_path, method: :patch do |f|
+      =form_for (current_user), url:user_path(current_user) do |f|
         .content__name
           %label  ニックネーム
           %span.form-require 必須
-          =f.text_field :name, placeholder: "例) 僧帽筋太郎", class: "input-default"
+          =f.text_field :name, placeholder: "例) 僧帽筋太郎(10字以内)", class: "input-default"
           - if @user.errors.any?
             - unless @user.valid?
               - if errors = @user.errors.full_messages_for(:name)

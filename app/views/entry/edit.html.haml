@@ -4,11 +4,10 @@
       =form_for @entry do |f|
         .main__entry__name
           ブログの編集
-        = f.text_field :title, placeholder: 'タイトル(１０文字以内)',class:"main__entry__title"
+        = f.text_field :title, placeholder: 'タイトル(20文字以内)',class:"main__entry__title"
         .main__entry__category
-          .main__entry__category
           %label  カテゴリー
-          =f.collection_select :entrycategory_id,,Entrycategory.all,:id,:name, {prompt: "---"}, class: "input-default"
+          =f.collection_select :entrycategory_id,Entrycategory.all,:id,:name, {prompt: "---"}, {class: "input-default"}       
           -# = f.label :category, 'カテゴリ'
           -# = f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category|
           -#   = category.label do
